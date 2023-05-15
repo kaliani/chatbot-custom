@@ -54,7 +54,7 @@ def run_pdf_agent(api_key: str, uploaded_file: Any):
                 # Set up the question-answering system
                 qa = RetrievalQA.from_chain_type(
                     llm=OpenAI(openai_api_key=api_key),
-                    chain_type = "map_reduce",
+                    chain_type = "stuff",
                     retriever=index.as_retriever(),
                 )
                 # Set up the conversational agent
